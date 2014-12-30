@@ -1,23 +1,29 @@
+isUsers = new Mongo.Collection('isusers');
+
+
 if (Meteor.isClient) {
+
   // counter starts at 0
-  Session.setDefault("counter", 0);
+  Template.statusInput.events({
+    'submit .status': function(e){
+      e.preventDefault();
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get("counter");
+      var status_message = $(e.target).find('[name=currentStatus]');
+
+      isUsers.insert({
+        user: Meteor.userId(),
+        status: status_message.val(),
+        createdAt: new Date()
+      })
+
+      status_message.val("")
     }
-  });
+  })
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
+  
+  Template.userStatus.helpers({
+    status: function(){
+      return isUsers.find({user: Meteor.userId()})
     }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+  })
 }

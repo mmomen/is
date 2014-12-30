@@ -3,12 +3,33 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  <div>
+    {{>loginButtons}}
+  </div>
+  {{>statusInput}}
+  <div>
+  {{>userStatus}}
+  </div>
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="statusInput">
+  <form class = "status">
+    <label for="currentStatus">status:</label>
+    <input type="text" name="currentStatus" id ="currentStatus">
+  </form>
+
+</template>
+
+<template name = "userStatus">
+  {{#each status}}
+    {{>theStatus}}
+  {{/each}}
+</template>
+
+<template name="theStatus">
+  <div>
+    {{status}}
+  </div>
 </template>
