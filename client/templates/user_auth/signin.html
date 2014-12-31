@@ -1,6 +1,5 @@
 <template name="signIn">
     <div class="sign-in" id="signIn">
-        <a class="show-forgot-password" href="javascript:void(0);" id="showForgotPassword">Forgot Password</a>
         <form action="/signin" class="sign-in-form" id="signInForm" method="post">
             <input class="email" id="signInEmail" type="text" name="email" placeholder="Email Address">
             <input class="password" id="signInPassword" type="password" name="password" placeholder="Password">
@@ -12,7 +11,6 @@
 
 <template name="signOut">
     <div class="connected">
-        <span class="welcome">Welcome New Meteorite!</span>
         <a class="sign-out" href="/" id="signOut">Sign Out</a>
     </div>
     <!-- end .connected -->

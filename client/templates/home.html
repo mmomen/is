@@ -1,19 +1,7 @@
 <template name="home">
   {{> alert}}
-  {{#unless resetPassword}}
-    {{#unless currentUser}}
-      {{#unless showForgotPassword}}
-        {{> signIn}}
-        {{> signUp}}
-      {{else}}
-        {{> forgotPassword}}
-      {{/unless}}
-    {{else}}
-      {{> signOut}}
-    {{/unless}}
-  {{else}}
-    {{> resetPassword}}
-  {{/unless}}
+    {{> signIn}}
+    <a href="{{pathFor 'signUp'}}">Sign Up</a>
 </template>
 
 <template name="alert">

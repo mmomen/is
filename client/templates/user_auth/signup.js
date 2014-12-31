@@ -16,10 +16,14 @@ Template.signUp.events({
                         Session.set('alert', 'We\'re sorry but something went wrong.');
                     }
                 } else {
-                    Session.set('alert', 'Congrats! You\'re now a new Meteorite!');
+                    // Session.set('alert', 'Congrats! You\'re now a new user!');
+                    Router.go('iserPage', {iser_id: Meteor.userId()})
                 }
             });
+
+
         }
+
         return false;
     },
 });

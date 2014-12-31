@@ -7,28 +7,24 @@ Template.signIn.events({
     var password = signInForm.find('.password').val();
 
     if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
-      Meteor.loginWithPassword(email, password, function(err) {
-        if (err) {
+      Meteor.loginWithPassword(email, password, function(error) {
+        if (error) {
           Session.set('alert', 'We\'re sorry but these credentials are not valid.');
         } else {
-          Sesson.set('alert', 'Welcome back New Meteorite!');
+          Router.go('iserPage', {iser_id: Meteor.userId()})
         }
-      });
+      });    
     }
-    return false;
-  },
 
-  'click #showForgotPassword': function(e, t) {
-      Session.set('showForgotPassword', true);
-      return false;
-  },
+  }
 
 });
 
 Template.signOut.events({
   'click #signOut': function(e, t) {
     Meteor.logout(function() {
-      Session.set('alert', 'Bye Meteorite! Come back whenever you want!');
+      Session.set('alert', 'You are now logged out');
+      Router.go('home')
     });
     return false;
   }

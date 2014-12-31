@@ -1,18 +1,3 @@
-if (Accounts._resetPasswordToken) {
-    Session.set('resetPassword', Accounts._resetPasswordToken);
-}
-
-
-Template.home.helpers({
-    showForgotPassword: function() {
-        return Session.get('showForgotPassword');
-    },
-    resetPassword: function(){
-        return Session.get('resetPassword');
-    }
-});
-
-
 trimInput = function(value) {
     return value.replace(/^\s*|\s*$/g, '');
 };
