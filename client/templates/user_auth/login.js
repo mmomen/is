@@ -1,28 +1,35 @@
-Template.loginForm.event({
-  'submit #login-form': function(e,t){
+Template.signIn.events({
+  'submit #signInForm': function(e, t) {
     e.preventDefault();
 
-    var username = t.find('#login-username').value;
-    var passwor = t.find('#login-password').value;
+    var signInForm = $(e.currentTarget);
+    var email = trimInput(signInForm.find('.email').val().toLowerCase());
+    var password = signInForm.find('.password').val();
 
-    Meteor.loginWithPassword(username, password, function(error){
-      if (error){
-        alert("WRONG CREDENTIALS");
-      }
-    })
+    if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
+      Meteor.loginWithPassword(email, password, function(err) {
+        if (err) {
+          Session.set('alert', 'We\'re sorry but these credentials are not valid.');
+        } else {
+          Sesson.set('alert', 'Welcome back New Meteorite!');
+        }
+      });
+    }
+    return false;
+  },
+
+  'click #showForgotPassword': function(e, t) {
+      Session.set('showForgotPassword', true);
+      return false;
+  },
+
+});
+
+Template.signOut.events({
+  'click #signOut': function(e, t) {
+    Meteor.logout(function() {
+      Session.set('alert', 'Bye Meteorite! Come back whenever you want!');
+    });
+    return false;
   }
-})
-
-
-Template.logoutForm.event({
-  'submit #logout-form':function(e,t){
-    e.preventDefault();
-
-    // Log Out but if there is an error, alert the user
-    Meteor.logout(function(error){
-      if (error){
-        alert("LOG OUT ERROR: PLEASE TRY AGAIN")
-      } 
-    })
-  }
-})
+});

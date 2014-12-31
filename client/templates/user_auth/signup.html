@@ -1,15 +1,11 @@
-<template name="signupForm">
-  <form id="signup-form">
-    <h2>Sign Up</h2>
-    <label for="signup-username">Username</label>
-    <input type="text" id="signup-username" class="form-control" placeholder="Username"> <br />
-
-    <label for="signup-email">Email</label>
-    <input type="text" id="signup-email" class="form-control" placeholder="Email"> <br />
-
-    <label for="signup-password">Password</label>
-    <input type="text" id="signup-password" class="form-control" placeholder="Password"> <br />
-
-    <button class="btn btn-primary" type='submit'>Sign Up</button>
-  </form>
+<template name="signUp">
+    <div class="sign-up">
+        <form action="/sign-up" class="sign-up-form" id="signUpForm" method="post">
+            <input class="email" id="signUpEmail" name="email" placeholder="Email Address" type="text" >
+            <input class="password" id="signUpPassword" name="password" placeholder="Password" type="password">
+            <input class="password-confirm" id="signUpPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password">
+            <input class="btn-submit" type="submit" value="Join Meteorites!">
+        </form>
+    </div>
+    <!-- end .sign-up -->
 </template>

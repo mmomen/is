@@ -1,20 +1,24 @@
-<!-- <template name="recovery">
-  {{#if resetPassword}}
-    <form action="action" id="new-password">
-      <div class="row">
-        <div class="col-md-4 col-lg-4">
-          <input type="text" class="form-control" id="new-password-passwrd">
-          <input type="submit" class="form-control" value="Change Password">
-        </div>
-      </div>
+<template name="forgotPassword">
+  <div class="forgot-password" id="forgotPassword">
+    <a class="return-to-sign-in" href="javascript:void(0);" id="returnToSignIn">Return</a>
+    <form action="/forgot" class="forgot-password-form" id="forgotPasswordForm" method="post">
+      <input class="email" id="forgotPasswordEmail" type="text" name="email" placeholder="Email Address">
+      <input class="btn-submit" type="submit" value="Send">
     </form>
-  {{else}}
-    <form action="action" id="recovery-form">
-      <div class="row">
-        <div class="col-md-4 col-lg-4">
-          <input type="text" class="form-control" id="recovery-email">
-          <input type="submit" class="form-control" value="Send Reset Email"></div>
-      </div>
+  </div>
+    <!-- end .forgot-password -->
+</template>
+
+<template name="resetPassword">
+  <div class="reset-password">
+    <h2 class="headline">You're now saved, <span class="bold">follow the light!</span></h2>
+    <h3 class="details">You just have to type and confirm  your new password to regain access to your dashboard.</h3>
+    <form action="/reset-password" class="reset-password-form" id="resetPasswordForm" method="post">
+      <input class="password" id="resetPasswordPassword" name="password" placeholder="Your New Password" type="password" >
+      <input class="password-confirm" id="resetPasswordPasswordConfirm" name="password-confirm" placeholder="Confirm New Password" type="password" >
+      <input class="btn-submit" type="submit" value="Reset">
     </form>
-  {{/if}}
-</template> -->
+  </div>
+    <!-- end .reset-password -->
+</template>
+

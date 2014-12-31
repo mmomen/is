@@ -1,19 +1,19 @@
-<template name="loginForm">
-  <form id="login-form">
-    <h2>Log In</h2>
-
-    <label for="login-username">Username</label>
-    <input type="text" id='login-username' class='form-control' placeholder='Username'> <br />
-
-    <label for="login-password">Password</label>
-    <input type="text" id='login-password' class='form-control' placeholder='Password'> <br />
-
-    <button type='submit' class="btn btn-primary">Log In</button>
-  </form>
+<template name="signIn">
+    <div class="sign-in" id="signIn">
+        <a class="show-forgot-password" href="javascript:void(0);" id="showForgotPassword">Forgot Password</a>
+        <form action="/signin" class="sign-in-form" id="signInForm" method="post">
+            <input class="email" id="signInEmail" type="text" name="email" placeholder="Email Address">
+            <input class="password" id="signInPassword" type="password" name="password" placeholder="Password">
+            <input class="btn-submit" type="submit" value="Sign In">
+        </form>
+    </div>
+    <!-- end .sign-in -->
 </template>
 
-<template name="logoutForm">
-  <form id="logout-form">
-    {{currentUser.username}}<button class="btn btn-danger" type="submit">Log Out</button>
-  </form>
+<template name="signOut">
+    <div class="connected">
+        <span class="welcome">Welcome New Meteorite!</span>
+        <a class="sign-out" href="/" id="signOut">Sign Out</a>
+    </div>
+    <!-- end .connected -->
 </template>
