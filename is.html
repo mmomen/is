@@ -1,35 +1,3 @@
 <head>
   <title>is</title>
 </head>
-
-<body>
-
-  <div>
-    {{>loginButtons}}
-  </div>
-  {{>statusInput}}
-  <div>
-  {{>userStatus}}
-  </div>
-
-</body>
-
-<template name="statusInput">
-  <form class = "status">
-    <label for="currentStatus">status:</label>
-    <input type="text" name="currentStatus" id ="currentStatus">
-  </form>
-
-</template>
-
-<template name = "userStatus">
-  {{#each status}}
-    {{>theStatus}}
-  {{/each}}
-</template>
-
-<template name="theStatus">
-  <div>
-    {{status}}
-  </div>
-</template>

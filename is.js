@@ -1,29 +1,30 @@
-isUsers = new Mongo.Collection('isusers');
+// isers = is users
+
+// Isers = new Mongo.Collection('isers');
 
 
-if (Meteor.isClient) {
+// if (Meteor.isClient) {
 
-  // counter starts at 0
-  Template.statusInput.events({
-    'submit .status': function(e){
-      e.preventDefault();
+//   Template.user.events({
+//     'submit .status_input': function(e){
+//       e.preventDefault();
 
-      var status_message = $(e.target).find('[name=currentStatus]');
+//       var status_message = $(e.target).find('[name=currentStatus]');
 
-      isUsers.insert({
-        user: Meteor.userId(),
-        status: status_message.val(),
-        createdAt: new Date()
-      })
-
-      status_message.val("")
-    }
-  })
-
+//       Isers.insert({
+//         user: Meteor.userId(),
+//         status: status_message.val(),
+//         createdAt: new Date()
+//       })
+    
+//       status_message.val("")
+//     }
+//   })
   
-  Template.userStatus.helpers({
-    status: function(){
-      return isUsers.find({user: Meteor.userId()})
-    }
-  })
-}
+//   Template.user.helpers({
+//     status: function(){
+//       return Isers.find({user: Meteor.userId()})
+//     }
+//   })
+// }
+

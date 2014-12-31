@@ -1,0 +1,19 @@
+<template name="loginForm">
+  <form id="login-form">
+    <h2>Log In</h2>
+
+    <label for="login-username">Username</label>
+    <input type="text" id='login-username' class='form-control' placeholder='Username'> <br />
+
+    <label for="login-password">Password</label>
+    <input type="text" id='login-password' class='form-control' placeholder='Password'> <br />
+
+    <button type='submit' class="btn btn-primary">Log In</button>
+  </form>
+</template>
+
+<template name="logoutForm">
+  <form id="logout-form">
+    {{currentUser.username}}<button class="btn btn-danger" type="submit">Log Out</button>
+  </form>
+</template>
