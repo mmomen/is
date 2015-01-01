@@ -1,5 +1,5 @@
 Template.iserPage.helpers({
-  status: function(){
-    return Isers.find({iserId: Meteor.userId()});
+  profile: function(field){
+    return (Isers.findOne({iserId: Meteor.userId()}))[field];
   }
 });
