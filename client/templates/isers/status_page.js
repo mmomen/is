@@ -1,12 +1,20 @@
-Template.statusPage.helpers({
+// Template.statusField.helpers({
 
-})
+// })
 
-Template.statusPage.events({
+Template.statusField.events({
   'submit #status-form': function(e){
     e.preventDefault();
 
-    var status = $(e.target).find('[name=status]').val();
+    var _id = Isers.findOne({iserId: Meteor.userId()})._id;
+  
+    var properties = {
+      status: $(e.target).find('[name=status]').val(),
+      statusAt: new Date()
+    };
     
+    Isers.update(_id, {$set: properties})
+  
+    $(e.target).find('[name=status]').val("")
   }
-})
+});
