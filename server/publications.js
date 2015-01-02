@@ -10,6 +10,6 @@ Meteor.publish('searchResult', function(iserId){
   if (!iserId){
     return this.ready();
   }else{
-    return Isers.find({}, {fields: {email: true, statusAt:true}});
+    return Isers.find({}, {fields: {email: true, statusAt: true, status:true}});
   }
-})  
+});
