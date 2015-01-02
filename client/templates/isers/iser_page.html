@@ -4,5 +4,18 @@
     {{profile 'status'}} <br />
     {{profile 'statusAt'}} <br />
     {{>statusField}}
+
+    {{#if showSearchField}}
+      <div class="search-input">
+        {{>searchIsers}}
+        <i class="fa fa-minus-square-o fa-3x"></i>
+      </div>
+
+    {{else}}
+      <div class="add-button">
+        <i class="fa fa-plus-square-o fa-3x"></i>
+      </div>
+    {{/if}}
+
   {{/if}}
 </template>

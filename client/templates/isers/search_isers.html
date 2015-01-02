@@ -1,0 +1,19 @@
+<template name="searchIsers ">
+  <form id="search-form">
+    <input type="text" class="search-field" name="search-field" placeholder="enter the email">
+    <input type="submit" value="search">
+  </form>
+  {{#if showResults}}
+    {{#if searchedIser}}
+      <div id="search-results">
+        {{#each searchedIser}}
+          {{>searchDetail}}
+        {{/each}}
+      </div>
+    {{else}}
+      <div class="error">
+        A user with this email address could not be found.
+      </div>
+    {{/if}}
+  {{/if}}
+</template>
