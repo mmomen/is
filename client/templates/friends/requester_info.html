@@ -1,4 +1,12 @@
 <template name='requesterInfo'>
-  {{email}}
-  {{lastStatus}}
+  <div id="{{requesterId}}">
+    {{email}}
+    {{lastStatus}}
+    <div>
+      <i class="fa fa-check fa-2x"></i>
+    </div>
+    <div>
+      <i class="fa fa-times fa-2x"></i>
+    </div>
+  </div>
 </template>

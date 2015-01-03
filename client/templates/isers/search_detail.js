@@ -27,6 +27,19 @@ Template.searchDetail.events({
       Isers.update({_id: this._id}, {$push:{friendRequests: {requesterId: currentIser._id}}}  );
     }
 
-  }
+  },
 
 });
+
+Template.searchDetail.helpers({
+  requestedAlready: function(){
+
+    var requestedFriendId = this._id
+    var currentIserFriends = Isers.findOne({iserId: Meteor.userId()}).friends
+
+    // IF I HAVE ALREADY FRIEND REQUESTED THIS ISER, IT WILL RETURN TRUE 
+    return (currentIserFriends
+      .some(function(friend){ return friend.friendId === requestedFriendId})
+    );
+  }
+})

@@ -10,7 +10,7 @@ Meteor.publish('requests', function(id) {
   if (!id){
     return this.ready();
   }else{
-    return Isers.find({_id: id}, {fields: {email:true, statusAt: true}});
+    return Isers.find({_id: id}, {fields: {email:true, statusAt: true, friends:true, friendRequests:true}});
   }
 });
 

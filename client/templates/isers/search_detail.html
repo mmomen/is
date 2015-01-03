@@ -1,9 +1,13 @@
 <template name="searchDetail">
   {{email}} <br />
   {{statusAt}}
-  <form id="add-iser">
-    <input type="submit" value= 'add'>
-  </form>  
+  {{#if requestedAlready}}
+    pending
+  {{else}}
+    <form id="add-iser">
+      <input type="submit" value= 'add'>
+    </form> 
+  {{/if}} 
 </template>
 
 
