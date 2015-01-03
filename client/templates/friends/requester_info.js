@@ -24,7 +24,7 @@ Template.requesterInfo.events({
       // updates current user's friend request and removes the request
       Isers.update({_id: currentIserId}, {$pull: {friendRequests: {requesterId: requesterId}}});
 
- 
+      var requesterEmail = Isers.findOne({_id: requesterId}).email; 
       var friendsArr = Isers.findOne({_id:requesterId}, {fields: {friends:1}}).friends;
 
       friendsArr.forEach(function(v,i){
@@ -38,6 +38,7 @@ Template.requesterInfo.events({
 
       var friend = {
         friendId: requesterId,
+        username: requesterEmail,
         validated: true
       }
 

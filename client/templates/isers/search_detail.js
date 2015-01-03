@@ -6,6 +6,7 @@ Template.searchDetail.events({
 
     var friend = {
       friendId: this._id,
+      username: this.email,
       validated: false
     };
 
