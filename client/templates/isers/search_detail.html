@@ -2,11 +2,15 @@
   {{email}} <br />
   {{statusAt}}
   {{#if requestedAlready}}
-    pending
+      pending
   {{else}}
-    <form id="add-iser">
-      <input type="submit" value= 'add'>
-    </form> 
+   {{#if friendsAlready}}
+      Already Friends
+    {{else}}
+      <form id="add-iser">
+        <input type="submit" value= 'add'>
+      </form> 
+    {{/if}}
   {{/if}} 
 </template>
 

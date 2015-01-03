@@ -13,7 +13,6 @@ Template.searchDetail.events({
     var friendsList = currentIser.friends
 
     var notFriendAlready = function(){
-
       // Used 'f' instead of friends to avoid confusion since we have a friend variable already.  
       return !(friendsList
         .some(function(f){ return f.friendId === friend.friendId; })
@@ -40,7 +39,16 @@ Template.searchDetail.helpers({
 
     // IF I HAVE ALREADY FRIEND REQUESTED THIS ISER, IT WILL RETURN TRUE 
     return (currentIserFriends
-      .some(function(friend){ return friend.friendId === requestedFriendId})
+      .some(function(friend){ return (friend.friendId === requestedFriendId && friend.validated === false)})
+    );
+  },
+  friendsAlready: function(){
+    var requestedFriendId = this._id
+    var currentIserFriends = Isers.findOne({iserId: Meteor.userId()}).friends
+
+    // IF I HAVE ALREADY FRIEND REQUESTED THIS ISER, IT WILL RETURN TRUE 
+    return (currentIserFriends
+      .some(function(friend){ return (friend.friendId === requestedFriendId && friend.validated === true)})
     );
   }
 })

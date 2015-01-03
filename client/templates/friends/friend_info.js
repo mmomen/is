@@ -15,44 +15,43 @@ Template.friendInfo.helpers({
 })
 
 Template.friendInfo.events({
-  'dblclick .username': function(e){
-    var username;
-    var friendsArr = Isers.findOne({iserId: Meteor.userId()}).friends;
-
-    var friendId = this._id
-    
-    friendsArr.forEach(function(friend){
-      if (friend.friendId === friendId && friend.validated === true){
-        username = friend.username
-      }
-    })
+  'dblclick .click-username': function(){
 
     // REMOVE THE CURRENT DIV THAT CONTAINS THE USERNAME
     var idDiv = "#" + this._id;
-    var $removeDiv = $(idDiv).find('.username');
-    $removeDiv.empty();
+    var $hideDiv = $(idDiv).find('.show-username');
+    var $showDiv = $(idDiv).find('.edit-username');
 
-    $removeDiv.append("<input type='text' class='change-username' value='" + username +"'>" ) 
+    $hideDiv.hide();
+    $showDiv.show();
+
+  
   },
   'keypress input.change-username': function(e, template){
     if (e.which === 13){
-      var currentIserId = (Isers.findOne({iserId: Meteor.userId()}))._id;
-
+      // VALUE OF THE INPUT FIELD
       var changedUsername = template.find('.change-username').value
+ 
 
+    // MAKE CHANGES TO THE FRIENDS ARRAY OF USER AND UPDATE IT:
+      var currentIserId = (Isers.findOne({iserId: Meteor.userId()}))._id;
       var friendsArr = Isers.findOne({iserId: Meteor.userId()}).friends;
-      var friendId = this._id
+      var thisFriendId = this._id
       
       friendsArr.forEach(function(friend){
-        if (friend.friendId === friendId && friend.validated === true){
-          friend.username = changedUsername
+        if (friend.friendId === thisFriendId && friend.validated === true){
+          friend.username = changedUsername;
         }
       })
 
       Isers.update({_id: currentIserId}, {$set:{friends: friendsArr}});
+
       var idDiv = "#" + this._id;
-      var $removeDiv = $(idDiv).find('.username');
-      $removeDiv.empty();
+      var $showDiv = $(idDiv).find('.show-username');
+      var $hideDiv = $(idDiv).find('.edit-username');
+
+      $hideDiv.hide();
+      $showDiv.show();
 
     }
   }

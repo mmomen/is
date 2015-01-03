@@ -1,6 +1,10 @@
 <template name="friendInfo">
   <div id="{{_id}}">
-    <div class="username">{{username}}</div>
+    <div class='click-username'>
+      <div class='show-username'>{{username}}</div>
+      <div class="edit-username" style="display: none;"><input type="text" class='change-username' value='{{username}}'></div>
+    </div>
+
     <div class="status">{{status}}</div> 
     <div class="statusAt">{{statusAt}}</div>
   </div>
