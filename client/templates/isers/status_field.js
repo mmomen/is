@@ -1,7 +1,3 @@
-// Template.statusField.helpers({
-
-// })
-
 Template.statusField.events({
   'submit #status-form': function(e){
     e.preventDefault();
