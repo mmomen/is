@@ -6,6 +6,14 @@ Meteor.publish('isers', function(iserId) {
   }
 });
 
+Meteor.publish('friends', function(_id) {
+  if (!_id){
+    return this.ready();
+  }else{
+    return Isers.find({_id: _id});
+  }
+});
+
 Meteor.publish('requests', function(id) {
   if (!id){
     return this.ready();
