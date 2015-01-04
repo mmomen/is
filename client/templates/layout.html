@@ -1,10 +1,10 @@
 <template name='layout'>
-  <div>
+  <div class="container-fluid is-layout">
     {{>header}}
-  </div>
-
-  <div>
-    {{>yield}}
+    
+    <div id="main" class="row-fluid">
+      {{>yield}}
+    </div>
   </div>
 </template>
 

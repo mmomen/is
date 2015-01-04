@@ -14,11 +14,11 @@ Meteor.publish('friends', function(_id) {
   }
 });
 
-Meteor.publish('requests', function(id) {
-  if (!id){
+Meteor.publish('requests', function(_id) {
+  if (!_id){
     return this.ready();
   }else{
-    return Isers.find({_id: id}, {fields: {email:true, statusAt: true, friends:true, friendRequests:true}});
+    return Isers.find({_id: _id}, {fields: {email:true, statusAt: true, friends:true}});
   }
 });
 

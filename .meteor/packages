@@ -6,8 +6,7 @@
 
 meteor-platform
 iron:router
-ian:bootstrap-3
-email
-accounts-password
-accounts-ui
 fortawesome:fontawesome
+mizzao:bootstrap-3
+ian:accounts-ui-bootstrap-3
+accounts-password
