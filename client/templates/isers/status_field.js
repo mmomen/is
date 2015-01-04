@@ -4,9 +4,11 @@ Template.statusField.events({
 
     var _id = Isers.findOne({iserId: Meteor.userId()})._id;
   
+    var date = formatTime();
+
     var properties = {
       status: $(e.target).find('[name=status]').val(),
-      statusAt: new Date()
+      statusAt: date
     };
     
     Isers.update(_id, {$set: properties})

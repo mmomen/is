@@ -37,12 +37,12 @@ a:hover{
 
 .navbar-brand{
   padding:0px;
-  margin-left:17vw !important;  
+  margin-left:14.5vw !important;  
 }
 
 
 .navbar-right{
-  margin-right:17vw !important;
+  margin-right:14.5vw !important;
 }
 .navbar-default .navbar-nav > li > a{
   color:#92AD40;
@@ -100,6 +100,13 @@ a:hover{
   text-align: center;
   font-size: 3.3em;
   margin:4%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 
@@ -127,6 +134,12 @@ a:hover{
 
 .explanation{
   margin-top: 25%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .subinfo-img{
   text-align:center;

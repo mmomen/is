@@ -1,29 +1,37 @@
-<template name="iserPage">
+  <template name="iserPage">
   <div class="user-content">
-    {{>friendRequests}}<br />
+    <div class="container-fluid friend-request">
+      {{>friendRequests}}
+    </div>
+
+    <div class="container-fluid all-panel">
+      <div class="col-xs-2 left-panel"><p></p></div>
+      <div class="col-xs-8 main-panel">
+        {{#if currentUser}}
+          {{profile 'email'}}<br />
+          {{profile 'status'}} <br />
+          {{profile 'statusAt'}} <br />
+          {{>statusField}}
+        {{/if}}
+
+        {{#if showSearchField}}
+          <div class="search-input">
+            {{>searchIsers}}
+            <i class="fa fa-minus-square-o fa-3x"></i>
+          </div>
+
+        {{else}}
+          <div class="add-button">
+            <i class="fa fa-plus-square-o fa-3x"></i>
+          </div>
+        {{/if}}
+
+        {{>friendsList}}
+      </div>
+      <div class="col-xs-2 right-panel"><p></p></div>
+    </div>
+    
 
 
-    {{#if currentUser}}
-      {{profile 'email'}}<br />
-      {{profile 'status'}} <br />
-      {{profile 'statusAt'}} <br />
-      {{>statusField}}
-
-      {{#if showSearchField}}
-        <div class="search-input">
-          {{>searchIsers}}
-          <i class="fa fa-minus-square-o fa-3x"></i>
-        </div>
-
-      {{else}}
-        <div class="add-button">
-          <i class="fa fa-plus-square-o fa-3x"></i>
-        </div>
-      {{/if}}
-
-    {{/if}}
-    <br />
-
-    {{>friendsList}}
   </div>
 </template>

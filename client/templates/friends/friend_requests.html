@@ -1,5 +1,14 @@
 <template name="friendRequests">
+  {{#if requesters}}
+    <div class="col-xs-12 fr-label">
+      <i class="fa fa-user"></i>Friend Request:
+    </div>
+  {{/if}}
   {{#each requesters}}
-    {{>requesterInfo}}
+    <div class="row" id="{{requesterId}}">
+      <div class="col-xs-1 col-sm-3"><p></p></div>
+      <div class="col-xs-10 col-sm-6">{{>requesterInfo}}</div>
+      <div class="col-xs-1 col-sm-3"><p></p></div>
+    </div>
   {{/each}}
 </template>

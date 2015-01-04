@@ -13,15 +13,14 @@ Template.requesterInfo.helpers({
 
 Template.requesterInfo.events({
   'click .fa-check': function(e){
-    e.preventDefault();
+    
+      e.preventDefault();
 
-    var requesterId = this.requesterId;
-    var divId = "#" + requesterId;
+      var requesterId = this.requesterId;
+      var divId = "#" + requesterId;
 
-    $(divId).animate({
-      opacity:0
-    },300, function(){
 
+    
       // DEFINE CURRENT ISER PROPERTIES
       var currentIser = (Isers.findOne({iserId: Meteor.userId()}));
       var currentIserId = currentIser._id
@@ -33,7 +32,7 @@ Template.requesterInfo.events({
 
 
 
-// STEP 1:
+  // STEP 1:
       // VALIDATE CURRENT ISER IN REQUESTER'S FRIENDS LIST
       requesterFriends.forEach(function(v,i){
         if(v.friendId == currentIserId){
@@ -43,11 +42,11 @@ Template.requesterInfo.events({
 
       Isers.update({_id: requesterId}, {$set:{friends: requesterFriends}});
 
-// STEP 2:
+  // STEP 2:
       // REMOVE FRIEND REQUEST FROM CURRENT ISER'S REQUEST LIST
       Isers.update({_id: currentIserId}, {$pull: {friendRequests: {requesterId: requesterId}}});
 
-// STEP 3:
+  // STEP 3:
       // ADD REQUESTER TO CURRENT ISER'S FRIENDS LIST:
       var currentIserRequested;
       currentIserFriends.forEach(function(friend){
@@ -69,8 +68,6 @@ Template.requesterInfo.events({
 
         Isers.update({_id: currentIserId}, {$push: {friends: friend}});
       }
-
-    })
   },
   'click .fa-times': function(e){
     e.preventDefault();
