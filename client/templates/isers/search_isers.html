@@ -1,7 +1,11 @@
 <template name="searchIsers ">
   <form id="search-form">
-    <input type="text" class="search-field" name="search-field" placeholder="enter the email">
-    <input type="submit" value="search">
+    <div class="input-group">
+      <input type="text" class="form-control search-field" name="search-field" placeholder="Search by email.">
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-default" value="search">
+      </span>
+    </div>
   </form>
   {{#if showResults}}
     {{#if searchedIser}}
@@ -17,3 +21,5 @@
     {{/if}}
   {{/if}}
 </template>
+
+  

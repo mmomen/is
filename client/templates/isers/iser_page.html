@@ -5,30 +5,52 @@
     </div>
 
     <div class="container-fluid all-panel">
-      <div class="col-xs-2 left-panel"><p></p></div>
-      <div class="col-xs-8 main-panel">
+      <div class="col-xs-1 left-panel"><p></p></div>
+      <div class="col-xs-10 main-panel">
         {{#if currentUser}}
-          {{profile 'email'}}<br />
-          {{profile 'status'}} <br />
-          {{profile 'statusAt'}} <br />
-          {{>statusField}}
+          <div class="col-xs-12 col-sm-5 user-info">
+            <div class="panel panel-default my-status-wrapper">
+              <div class="panel-heading my-status-time">
+                 {{profile 'statusAt'}}
+              </div>
+              <div class="panel-body my-status">
+                <div class="col-xs-12">
+                  <p>{{profile 'status'}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="status-input">
+              {{>statusField}}
+            </div>
+          </div>       
         {{/if}}
+          <div class="col-xs-12 col-sm-7 others-info">
 
-        {{#if showSearchField}}
-          <div class="search-input">
-            {{>searchIsers}}
-            <i class="fa fa-minus-square-o fa-3x"></i>
+            {{#if showSearchField}}
+              <div class="search-input">
+                <div class="col-xs-2 plus-minus">
+                  <i class="fa fa-minus-square-o fa-3x"></i>
+                </div>
+                <div class="col-xs-10 search-iser-wrapper">
+                  {{>searchIsers}}
+                </div>
+              </div>
+            {{else}}
+              <div class="search-input">
+                <div class="col-xs-2">
+                  <i class="fa fa-plus-square-o fa-3x"></i>
+                </div>
+              </div>
+            {{/if}}
+              
+            <div class="col-xs-12">
+              {{>friendsList}}
+            </div>
           </div>
 
-        {{else}}
-          <div class="add-button">
-            <i class="fa fa-plus-square-o fa-3x"></i>
-          </div>
-        {{/if}}
 
-        {{>friendsList}}
       </div>
-      <div class="col-xs-2 right-panel"><p></p></div>
+      <div class="col-xs-1 right-panel"><p></p></div>
     </div>
     
 

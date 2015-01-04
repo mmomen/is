@@ -1,17 +1,21 @@
 <template name="searchDetail">
-  {{email}} <br />
-  {{statusAt}}
-  {{#if requestedAlready}}
-      pending
-  {{else}}
-   {{#if friendsAlready}}
-      Already Friends
+  <div class="col-xs-12">Email: {{email}}</div>
+  <div class="col-xs-12">Last status: {{statusAt}}</div>
+  <div class="col-xs-12 friend-request-status">
+    {{#if requestedAlready}}
+        Pending
     {{else}}
-      <form id="add-iser">
-        <input type="submit" value= 'add'>
-      </form> 
+     {{#if friendsAlready}}
+        Already Friends
+      {{else}}
+        <form id="add-iser">
+          <i class="fa fa-user make-friend-request">
+            <input type="submit" value= 'add'>
+          </i>
+        </form> 
+      {{/if}}
     {{/if}}
-  {{/if}} 
+  </div> 
 </template>
 
 

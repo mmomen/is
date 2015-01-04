@@ -1,0 +1,61 @@
+.all-panel{
+  border-radius:10px;
+}
+
+.left-panel{
+  background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);
+  min-height: 35em;
+  height: 100vh;
+}
+
+.main-panel{
+  min-height: 35em;
+  height:100vh;
+}
+
+.right-panel{
+  background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);
+  min-height: 35em;
+  height:100vh;
+}
+
+.user-info{
+  margin-top: 2em;
+  height: 21em;
+
+}
+
+.my-status{
+  height: 16em;
+  width:100%;
+}
+
+.my-status-input{
+  padding:0;
+}
+
+.enter-status{
+  padding:0;
+  border:none;
+}
+
+.my-status-wrapper{
+  margin-bottom:0;
+  width:99.7%;
+}
+
+.status-input{
+  width:100%;
+}
+
+.enter-status input{
+  height:100%;
+  border:none;
+}
+.status-form{
+  width:100%;
+}
+
+.others-info{
+  padding:0;
+}

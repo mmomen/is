@@ -1,5 +1,5 @@
 Template.searchDetail.events({
-  'submit #add-iser': function(e){
+  'click .make-friend-request': function(e){
     e.preventDefault();
 
     var currentIser = Isers.findOne({iserId: Meteor.userId()});

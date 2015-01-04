@@ -1,0 +1,27 @@
+.search-input{
+  margin-top:2em;
+}
+
+.search-iser-wrapper{
+  padding-left:0;
+  margin-top:1px;
+}
+
+.plus-minus{
+  padding-right:0;
+}
+
+.fa-minus-square-o{
+  padding-bottom:0.3em;
+  padding-right:0.3em;
+}
+
+#search-results{
+  margin-top:1em;
+  width:100%;
+}
+
+.fa-plus-square-o{
+  margin-bottom:0.3em;
+}
+

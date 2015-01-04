@@ -1,5 +1,7 @@
 <template name="friendsList">
   {{#each friends}}
-    {{>friendInfo}}
+    <div class="col-xs-12 display-each-friend">
+      {{>friendInfo}}
+    </div>
   {{/each}}
 </template>
