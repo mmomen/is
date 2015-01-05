@@ -6,13 +6,26 @@ Template.statusField.events({
   
     var date = formatTime();
 
+    var $status =  $(e.target).find('[name=status]');
+
+    // var statusLength = $status.val().match(/\w|\W/g).length;
+
+    // if (statusLength > 88){
+    //   $('#status-input').css('font-size', '2.2em');
+    // } else if(statusLength > 180){
+    //   $('#status-input').css('font-size', '1.0em');
+    // }
+    // // // } else if(statusLength>200){
+    // // //   $status.val("You have gone over the 200 word limit")
+    // // // }
+
     var properties = {
-      status: $(e.target).find('[name=status]').val(),
+      status: $status.val(),
       statusAt: date
     };
     
     Isers.update(_id, {$set: properties})
   
-    $(e.target).find('[name=status]').val("")
+    $status.val("")
   }
 });

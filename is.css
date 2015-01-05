@@ -4,20 +4,20 @@
 
 
 a{
-  color:#92AD40;
+  color:#006b6b;
 }
 
 a:hover{
-  color: #33AD33;
+  color: #74cab4;
 }
 
 .btn-primary{
-  background-color: #92AD40;
-  border-color: #92AD40;
+  background-color: #006b6b;
+  border-color: #006b6b;
 }
 
 .btn-primary:hover{
-  background-color:#33AD33;
+  background-color:#74cab4;
 }
 
 .background img{
@@ -45,7 +45,7 @@ a:hover{
   margin-right:14.5vw !important;
 }
 .navbar-default .navbar-nav > li > a{
-  color:#92AD40;
+  color:#006b6b;
 }
 
 .navbar-header a:hover{
@@ -54,11 +54,11 @@ a:hover{
 
 
 .navbar-default .navbar-toggle{
-  border-color: #92AD40 ;
+  border-color: #006b6b ;
 }
 
 .navbar-default .navbar-toggle .icon-bar{
-  background-color:#92AD40;
+  background-color:#006b6b;
 }
 
 
@@ -66,11 +66,11 @@ a:hover{
 .fa-bullseye{
   margin-bottom:4px;
   margin-left:11.5px;
-  color: #92AD40;
+  color: #006b6b;
 }
 .fa-square{
   margin-top: 3px;
-  color:#92AD40;
+  color:#006b6b;
 }
 
 
@@ -205,129 +205,34 @@ a:hover{
 @media all and (min-width: 1700px) {  .footer-info  { font-size:1.1em;  } }
 
 
-
-/*body {
-  font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
-  background-attachment: fixed;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: 0;
-  margin: 0;
-
-  font-size: 14px;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  min-height: 100%;
-  background: white;
-}
-
-header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-  padding: 20px 15px 15px 15px;
-  position: relative;
-}
-
-#login-buttons {
-  display: block;
-}
-
-h1 {
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-right: 1em;
-}
-
-form {
-  margin-top: 10px;
-  margin-bottom: -10px;
-  position: relative;
-}
-
-.new-task input {
-  box-sizing: border-box;
-  padding: 10px 0;
-  background: transparent;
-  border: none;
-  width: 100%;
-  padding-right: 80px;
-  font-size: 1em;
-}
-
-.new-task input:focus{
+textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(0, 107, 107, 1.0);
+  /* We don't have the LESS .box-shadow function in plain CSS */
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(116, 202 , 180, 0.6));
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(116, 202, 180, 0.6));
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(116, 202, 180, 0.6));
   outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+
+
+
+
+
+
+
+
 }
-
-ul {
-  margin: 0;
-  padding: 0;
-  background: white;
-}
-
-.delete {
-  float: right;
-  font-weight: bold;
-  background: none;
-  font-size: 1em;
-  border: none;
-  position: relative;
-}
-
-li {
-  position: relative;
-  list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
-}
-
-li .text {
-  margin-left: 10px;
-}
-
-li.checked {
-  color: #888;
-}
-
-li.checked .text {
-  text-decoration: line-through;
-}
-
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
-
-header .hide-completed {
-  float: right;
-}
-
-.toggle-private {
-  margin-left: 5px;
-}
-
-@media (max-width: 600px) {
-  li {
-    padding: 12px 15px;
-  }
-
-  .search {
-    width: 150px;
-    clear: both;
-  }
-
-  .new-task input {
-    padding-bottom: 5px;
-  }
-}*/

@@ -3,11 +3,11 @@
 }
 
 .all-panel{
+  background-color:  rgba(245, 245, 245, 0.2);;
   border-radius:10px;
 }
 
 .left-panel{
-  /*background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);*/
   min-height: 35em;
   height: 100vh;
 }
@@ -28,19 +28,56 @@
   font-size: 0.75em;
 }
 
-.user-info{
-  margin-top: 2em;
-  height: 21em;
+.status-jumbotron{
+  margin-top:2em;
+  height: 15em;
+}
+
+.status-jumbotron-top{
+  height: 12em;
+  width:100%;
+  overflow: hidden;
 
 }
 
+.status-jumbotron-bottom{
+  height:3em;
+}
+
+#status-input{
+  text-align:center;
+  height: 12em;
+  width:100%;
+  overflow: hidden;
+  font-size:2.6em;
+}
+
+#status-input p{
+  margin:0.5em;
+}
+
+
+
+
+
+.user-info{
+  margin-top: 2em;
+  height: 21em;
+}
+
 .my-status{
-  height: 16em;
   width:100%;
 }
 
 .my-status-input{
   padding:0;
+}
+
+.my-status-time{
+  text-align:right;
+  font-size: 0.8em;
+  margin-right:0.3em;
+  opacity:0.4;
 }
 
 .enter-status{
@@ -65,9 +102,6 @@
   margin-right:0;
 }
 
-.status-input{
-  width:100%;
-}
 
 .enter-status input{
   height:100%;

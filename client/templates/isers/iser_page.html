@@ -3,49 +3,50 @@
     <div class="container-fluid friend-request">
       {{>friendRequests}}
     </div>
-
     <div class="container-fluid all-panel">
       <div class="col-xs-1 left-panel"><p></p></div>
       <div class="col-xs-10 main-panel">
         {{#if currentUser}}
-          <div class="col-xs-12 col-sm-5 user-info">
-            <div class="panel panel-default my-status-wrapper">
-              <div class="panel-heading my-status-time">
-                 {{profile 'statusAt'}}
-                 <i class="fa fa-youtube-square status-options"></i>
-                 <i class="fa fa-camera status-options"></i>
-                 <i class="fa fa-picture-o status-options"></i>
-              </div>
-              <div class="panel-body my-status">
-                <div class="col-xs-12">
-                  <p>{{profile 'status'}}</p>
-                </div>
+          <div class="status-jumbotron">
+            <div class="col-xs-12 status-jumbotron-top">
+              <div id="status-input">
+                <p>{{profile 'status'}}</p>
               </div>
             </div>
-            <div class="status-input">
+            <div class="col-xs-12 status-jumbotron-bottom">
+              <div class = "my-status-time">{{profile 'statusAt'}}</div>
               {{>statusField}}
-            </div>
-          </div>       
-        {{/if}}
-          <div class="col-xs-12 col-sm-7 others-info">
 
-            {{#if showSearchField}}
-              <div class="search-input">
-                <div class="col-xs-2 plus-minus">
-                  <i class="fa fa-minus-square-o fa-3x"></i>
+            </div>
+          </div>
+        {{/if}}
+
+ 
+          <div class="col-xs-12 col-sm-12 others-info">
+            <div class="col-xs-6 search-toggle">
+              {{#if showSearchField}}
+                <div class="search-input">
+                  <div class="col-xs-2 plus-minus">
+                    <i class="fa fa-minus-square-o fa-3x"></i>
+                  </div>
+                  <div class="col-xs-10 search-iser-wrapper">
+                    {{>searchIsers}}
+                  </div>
                 </div>
-                <div class="col-xs-10 search-iser-wrapper">
-                  {{>searchIsers}}
+              {{else}}
+                <div class="search-input">
+                  <div class="col-xs-2">
+                    <i class="fa fa-plus-square-o fa-3x"></i>
+                  </div>
                 </div>
-              </div>
-            {{else}}
-              <div class="search-input">
-                <div class="col-xs-2">
-                  <i class="fa fa-plus-square-o fa-3x"></i>
-                </div>
-              </div>
-            {{/if}}
+              {{/if}}
+            </div>
+            <div class="col-xs-6 options">
               
+            </div>
+        
+            
+      
             <div class="col-xs-12">
               {{>friendsList}}
             </div>
