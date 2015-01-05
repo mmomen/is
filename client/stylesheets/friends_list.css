@@ -10,3 +10,17 @@
 .friend-request-status{
   margin-bottom: 2em;
 }
+
+.status-at{
+  font-size:0.7em;
+  text-align: right;
+  padding-right:1em;
+}
+
+.panel-footer{
+  padding:0;
+}
+
+.show-username h4{
+  margin:0;
+}

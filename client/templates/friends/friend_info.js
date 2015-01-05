@@ -31,6 +31,7 @@ Template.friendInfo.events({
     if (e.which === 13){
       // VALUE OF THE INPUT FIELD
       var changedUsername = template.find('.change-username').value
+
  
 
     // MAKE CHANGES TO THE FRIENDS ARRAY OF USER AND UPDATE IT:
@@ -39,7 +40,7 @@ Template.friendInfo.events({
       var thisFriendId = this._id
       
       friendsArr.forEach(function(friend){
-        if (friend.friendId === thisFriendId && friend.validated === true){
+        if (friend.friendId === thisFriendId && friend.validated === true && (/\S/g).test(changedUsername) === true){
           friend.username = changedUsername;
         }
       })

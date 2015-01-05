@@ -1,22 +1,31 @@
+.nav > li > a{
+  padding-left:30px
+}
+
 .all-panel{
   border-radius:10px;
 }
 
 .left-panel{
-  background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);
+  /*background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);*/
   min-height: 35em;
   height: 100vh;
 }
 
 .main-panel{
+  /*background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);*/
   min-height: 35em;
   height:100vh;
 }
 
 .right-panel{
-  background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);
+  /*background-image: linear-gradient(to bottom, #92AD40, #FFFFFF 140%);*/
   min-height: 35em;
   height:100vh;
+}
+
+.panel-heading{
+  font-size: 0.75em;
 }
 
 .user-info{
@@ -42,6 +51,18 @@
 .my-status-wrapper{
   margin-bottom:0;
   width:99.7%;
+}
+
+.status-options{
+  float:right;
+  margin-right:0.4em;
+}
+
+.status-options:hover{
+  color:#B2B2B2;
+}
+.fa-youtube-square{
+  margin-right:0;
 }
 
 .status-input{
