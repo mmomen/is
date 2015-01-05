@@ -2,10 +2,15 @@
   background-color: white;
 }
 .main-jumbotron{
-  background-image: url("whitebackground.jpg");
+  margin-top: 4em;
+  background-color: rgba(116, 202, 180, 0.2);
 }
 
 .jumbotron-button{
   float:right;
   margin-right: 2em;
+}
+
+#main{
+  min-height:600px;
 }

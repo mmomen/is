@@ -16,6 +16,10 @@
   padding-right:0.3em;
 }
 
+.fa-minus-square-o:hover{
+  color: #808080;
+}
+
 #search-results{
   margin-top:1em;
   width:100%;
@@ -23,6 +27,10 @@
 
 .fa-plus-square-o{
   margin-bottom:0.3em;
+}
+
+.fa-plus-square-o:hover{
+  color:#808080;
 }
 
 .search-toggle{

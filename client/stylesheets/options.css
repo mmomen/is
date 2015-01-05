@@ -1,0 +1,21 @@
+.options{
+  padding:0;
+}
+
+.fa-options{
+  padding:0;
+  margin-top:1.3em;
+  /*margin-bottom:2.5em;*/
+}
+
+.fa-options:hover{
+  color: #808080;
+}
+
+.fa-setting{
+  margin-top:2em;
+}
+
+.fa-setting:hover{
+  color:#808080;
+}

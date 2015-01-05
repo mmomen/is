@@ -20,10 +20,29 @@
             </div>
           </div>
         {{/if}}
-
+          
  
           <div class="col-xs-12 col-sm-12 others-info">
-            <div class="col-xs-6 search-toggle">
+            <div class="col-xs-12 col-sm-6 options">
+              <div class="col-xs-3"><i class="fa fa-picture-o fa-2x fa-options"></i></div>
+              <div class="col-xs-3"><i class="fa fa-arrows fa-2x fa-options"></i></div>
+              <div class="col-xs-3"><i class="fa fa-trash fa-2x fa-options"></i></div>
+              <div class="col-xs-3">
+                <div class="dropdown fa-setting">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fa fa-cog fa-2x"></i>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">History</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Info</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-xs-12 col-sm-6 search-toggle">
               {{#if showSearchField}}
                 <div class="search-input">
                   <div class="col-xs-2 plus-minus">
@@ -41,12 +60,8 @@
                 </div>
               {{/if}}
             </div>
-            <div class="col-xs-6 options">
-              
-            </div>
+          
         
-            
-      
             <div class="col-xs-12">
               {{>friendsList}}
             </div>
