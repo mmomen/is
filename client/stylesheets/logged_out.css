@@ -1,0 +1,11 @@
+.jumbotron{
+  background-color: white;
+}
+.main-jumbotron{
+  background-image: url("whitebackground.jpg");
+}
+
+.jumbotron-button{
+  float:right;
+  margin-right: 2em;
+}
