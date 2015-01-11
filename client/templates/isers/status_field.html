@@ -1,12 +1,16 @@
 <template name="statusField">
-  <form id="status-form">
-    <div class="input-group">
-      <input type="text" class="form-control my-status" placeholder="Enter your status. (200 character limit)" name="status">
-      <span class="input-group-btn">
-        <input type="submit" class ="btn btn-default" value="&rdca;">
-      </span>
-    </div>
-  </form>
+  <div class="form-group {{errorClass 'status'}}">
+    <form id="status-form">
+      <div class="input-group">
+        <input type="text" class="form-control my-status" placeholder="Enter your status. (200 character limit)" name="status">
+        <span class="input-group-btn">
+          <input type="submit" class ="btn btn-default" value="&rdca;">
+        </span>
+      </div>
+    </form>
+
+    <span class="help-block">{{errorMessage 'status'}}</span>
+  </div>
 </template>
 
   

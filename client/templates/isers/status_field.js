@@ -8,8 +8,11 @@ Template.statusField.events({
 
     var statusLength = status.val().length;
 
-    if (statusLength>10){
-      throwError("You have exceeded 200 characters!")
+    if (statusLength>200){
+      Session.set('postSubmitErrors', {status: "You have exceeded 200 characters!"})
+      setTimeout(function(){
+        Session.set('postSubmitErrors', {})
+      },1500);
     }else{
       Meteor.call('updateStatus', _id, status.val());
     
@@ -25,5 +28,20 @@ Template.statusField.events({
     // // //   $status.val("You have gone over the 200 word limit")
     // // // }
 
+  }
+});
+
+
+Template.statusField.created = function() {
+  Session.set('postSubmitErrors', {});
+}
+
+
+Template.statusField.helpers({
+  errorMessage: function(field) {
+    return Session.get('postSubmitErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
   }
 });
