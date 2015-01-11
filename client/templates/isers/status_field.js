@@ -6,15 +6,15 @@ Template.statusField.events({
   
     var status =  $(e.target).find('[name=status]');
 
-    // var statusLength = status.val().length;
+    var statusLength = status.val().length;
 
-    // if (statusLength>10){
-    
-    // }else{
+    if (statusLength>10){
+      throwError("You have exceeded 200 characters!")
+    }else{
       Meteor.call('updateStatus', _id, status.val());
     
       status.val("");
-    // }
+    }
 
     // if (statusLength > 88){
     //   $('#status-input').css('font-size', '2.2em');
