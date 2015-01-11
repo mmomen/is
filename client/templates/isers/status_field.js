@@ -6,7 +6,15 @@ Template.statusField.events({
   
     var status =  $(e.target).find('[name=status]');
 
-    // var statusLength = $status.val().match(/\w|\W/g).length;
+    // var statusLength = status.val().length;
+
+    // if (statusLength>10){
+    
+    // }else{
+      Meteor.call('updateStatus', _id, status.val());
+    
+      status.val("");
+    // }
 
     // if (statusLength > 88){
     //   $('#status-input').css('font-size', '2.2em');
@@ -17,8 +25,5 @@ Template.statusField.events({
     // // //   $status.val("You have gone over the 200 word limit")
     // // // }
 
-    Meteor.call('updateStatus', _id, status.val());
-  
-    status.val("");
   }
 });
