@@ -1,0 +1,33 @@
+@-webkit-keyframes spaceboots {
+  0% { -webkit-transform: translate(0px, 0px) rotate(0deg); }
+  10% { -webkit-transform: translate(-0.5px, -1px) rotate(-0.5deg); }
+  20% { -webkit-transform: translate(-1px, 0px) rotate(0.5deg); }
+  30% { -webkit-transform: translate(0px, 1px) rotate(-0.5deg); }
+  40% { -webkit-transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+  50% { -webkit-transform: translate(-0.5px, 1px) rotate(-0.5deg); }
+  60% { -webkit-transform: translate(-1px, -0.5px) rotate(0.5deg); }
+  70% { -webkit-transform: translate(1px, 0.5px) rotate(-0.5deg); }
+  80% { -webkit-transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+  90% { -webkit-transform: translate(1px, 0px) rotate(-0.5deg); }
+  100% { -webkit-transform: translate(0px, 0px) rotate(0deg); }
+}
+.shake {
+  -webkit-animation-name: spaceboots;
+  -webkit-animation-duration: 2.4s;
+  -webkit-transform-origin:50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.shake {
+  display:inline-block
+}
+
+
+.show-username span{
+  float:right
+}
+
+.delete-friend-button:hover{
+  -webkit-transform: scale(1.8,1.8);
+  -moz-transform:scale(1.8,1.8);
+}
