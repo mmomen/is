@@ -4,9 +4,7 @@ Template.statusField.events({
 
     var _id = Isers.findOne({iserId: Meteor.userId()})._id;
   
-    var date = formatTime();
-
-    var $status =  $(e.target).find('[name=status]');
+    var status =  $(e.target).find('[name=status]');
 
     // var statusLength = $status.val().match(/\w|\W/g).length;
 
@@ -19,13 +17,8 @@ Template.statusField.events({
     // // //   $status.val("You have gone over the 200 word limit")
     // // // }
 
-    var properties = {
-      status: $status.val(),
-      statusAt: date
-    };
-    
-    Isers.update(_id, {$set: properties})
+    Meteor.call('updateStatus', _id, status.val());
   
-    $status.val("")
+    status.val("");
   }
 });

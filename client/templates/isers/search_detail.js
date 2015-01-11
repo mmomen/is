@@ -17,15 +17,9 @@ Template.searchDetail.events({
       return !(friendsList
         .some(function(f){ return f.friendId === friend.friendId; })
       ); 
+    };
 
-    }
-
-    if (notFriendAlready()){
-      // ADDS FRIEND TO THIS USER'S FRIENDS ARRAY
-      Isers.update({_id: currentIser._id}, {$push: {friends: friend}});
-      // ADDS THIS USER TO THE FRIEND'S FRIEND REQUEST ARRAY
-      Isers.update({_id: this._id}, {$push:{friendRequests: {requesterId: currentIser._id}}}  );
-    }
+    if (notFriendAlready()){ Meteor.call('updateFriendRequests', currentIser, friend); }
 
   },
 

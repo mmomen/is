@@ -45,7 +45,7 @@ Template.friendInfo.events({
         }
       })
 
-      Isers.update({_id: currentIserId}, {$set:{friends: friendsArr}});
+      Meteor.call('updateUsername', currentIserId, friendsArr);
 
       var idDiv = "#" + this._id;
       var $showDiv = $(idDiv).find('.show-username');
