@@ -18,7 +18,7 @@ Template.iserPage.events({
   'click .fa-trash': function(){
     var $eachFriend = $('.display-each-friend');
 
-    if ($eachFriend.hasClass('shake')){
+    if ($eachFriend.hasClass('shake') || $('.fa-trash').attr('style')){
       $eachFriend.removeClass('shake');
       $('.fa-trash').removeAttr('style');
       $('.delete-friend-button').remove();
@@ -40,7 +40,7 @@ Template.iserPage.events({
 
     var deleteFriend = confirm("Are you sure you want to delete "+ username + "?");
 
-    var friendsFriendArr;
+    var friendsFriendArr, iserFriendsArr;
     if (deleteFriend === true){
       friendsFriendArr = this.friends.filter(function(friend){
         if(friend.friendId !== iser._id){
@@ -51,14 +51,12 @@ Template.iserPage.events({
     }
 
     // DELETE FRIEND FROM CURRENT ISER'S FRIENDS LIST
-    var iserFriendsArr;
     if (deleteFriend === true){
-      friendsArr = iser.friends.filter(function(friend){
+      iserFriendsArr = iser.friends.filter(function(friend){
         if (friend.friendId !== this._id){
           return friend
         }
       }, this);
-
       Meteor.call('updateUsername', iser._id, iserFriendsArr);
     }
   }

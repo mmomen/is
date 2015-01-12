@@ -1,5 +1,5 @@
 // TODO
-// delete
 // notificaitons
 // message when friend request
+// word wrap on jumbotron status 
 
