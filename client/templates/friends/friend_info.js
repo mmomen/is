@@ -58,3 +58,4 @@ Template.friendInfo.events({
   }
 })
 
+

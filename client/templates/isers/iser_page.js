@@ -59,5 +59,30 @@ Template.iserPage.events({
       }, this);
       Meteor.call('updateUsername', iser._id, iserFriendsArr);
     }
+  },
+  'click .fa-arrows': function(){
+    var $drag = $('.fa-arrows');
+
+    if ($drag.hasClass('drag-on')){
+        $drag.removeClass('drag-on');
+        $drag.removeAttr('style')
+        $('.panel-heading').css('background-color', 'rgba(0, 107, 107, 0.2)');
+        $('.testest').sortable( "destroy" ) 
+    }else{
+      $('.fa-arrows').addClass('drag-on');
+      $('.fa-arrows').css('color', 'color: rgba(40, 75, 130, 0.9)')
+      $('.panel-heading').css('background-color', 'rgba(40, 75, 130, 0.2)');
+      
+      $(".testest").sortable({
+        connectWith: '.display-each-friend',
+        tolerance: "pointer",
+        cursor: 'pointer',
+        revert: true,
+        opacity: 0.7,
+        forcePlaceholderSize: true,
+        helper: "clone"
+      });
+    }
+
   }
 })

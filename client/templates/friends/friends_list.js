@@ -17,4 +17,4 @@ Template.friendsList.helpers({
     return validatedFriends;
     
   }
-})
+});
