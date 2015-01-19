@@ -61,46 +61,52 @@ Template.iserPage.events({
     }
   },
   'click .fa-arrows': function(){
-    var $drag = $('.fa-arrows');
+    var $dragIcon = $('.fa-arrows');
 
-    if ($drag.hasClass('drag-on')){
-        $drag.removeClass('drag-on');
-        $drag.removeAttr('style')
-        $('.panel-heading').css('background-color', 'rgba(0, 107, 107, 0.2)');
-        $('.testest').sortable( "destroy" ) 
-        var x = $('.testest').children().children()
-        var y = x.map(function(){
+    if ($dragIcon.hasClass('drag')){
+      var newFriendsArr = [];
+      var iser = Isers.findOne({iserId: Meteor.userId()});
+
+      // DOM CHANGES: 
+        $dragIcon.removeClass('drag').removeAttr('style');
+        $('.panel-heading').css({'background-color': 'rgba(0, 107, 107, 0.2)', 'border': 'none'});
+        $('.drag-div').sortable( "destroy" );
+
+      // GET NEW DIV ORDER BY ID
+        var childDiv = $('.drag-div').children().children();
+        var childDivIds = childDiv.map(function(){
           return this.id;
         }).get();
 
-        var newFriend = [];
-        var isers = Isers.findOne({iserId: Meteor.userId()});
-        while (y.length > 0){
-          var p = y.shift();
-          isers.friends.forEach(function(iser){    
-            if (iser.friendId === p){
-              newFriend.push(iser)
+      // CREATE NEW FRIENDS ORDER
+        while (childDivIds.length > 0){
+          var childDivId = childDivIds.shift();
+          iser.friends.forEach(function(friend){    
+            if (friend.friendId === childDivId){
+              newFriendsArr.push(friend)
             }
-          })
+          });
         }
-        Meteor.call('updateFriendOrder', isers._id, newFriend);
 
+      // UPDATE DATABASE
+        Meteor.call('updateFriendOrder', iser._id, newFriendsArr);
 
     }else{
-      $('.fa-arrows').addClass('drag-on');
-      $('.fa-arrows').css('color', 'color: rgba(40, 75, 130, 0.9)')
-      $('.panel-heading').css('background-color', 'rgba(40, 75, 130, 0.2)');
+
+      // DOM MANIPULATION:
+      $dragIcon.addClass('drag').css('color', 'color: rgba(40, 75, 130, 0.9)');
+      $('.panel-heading').css({'background-color': 'rgba(40, 75, 130, 0.2)', 'border': 'dashed 1px black'});
       
-      $(".testest").sortable({
+      // ADD SORTABLE (DRAG FUNCTIONALITY)
+      $(".drag-div").sortable({
         connectWith: '.display-each-friend',
         tolerance: "pointer",
-        cursor: 'pointer',
+        cursor: 'move',
         revert: true,
         opacity: 0.7,
         forcePlaceholderSize: true,
         helper: "clone"
       });
-
 
     }
 

@@ -8,8 +8,8 @@ Template.statusField.events({
 
     var statusLength = status.val().length;
 
-    if (statusLength>200){
-      Session.set('postSubmitErrors', {status: "You have exceeded 200 characters!"})
+    if (statusLength>100){
+      Session.set('postSubmitErrors', {status: "You have exceeded 100 characters!"})
       setTimeout(function(){
         Session.set('postSubmitErrors', {})
       },1500);
@@ -18,15 +18,6 @@ Template.statusField.events({
     
       status.val("");
     }
-
-    // if (statusLength > 88){
-    //   $('#status-input').css('font-size', '2.2em');
-    // } else if(statusLength > 180){
-    //   $('#status-input').css('font-size', '1.0em');
-    // }
-    // // // } else if(statusLength>200){
-    // // //   $status.val("You have gone over the 200 word limit")
-    // // // }
 
   }
 });
