@@ -68,6 +68,24 @@ Template.iserPage.events({
         $drag.removeAttr('style')
         $('.panel-heading').css('background-color', 'rgba(0, 107, 107, 0.2)');
         $('.testest').sortable( "destroy" ) 
+        var x = $('.testest').children().children()
+        var y = x.map(function(){
+          return this.id;
+        }).get();
+
+        var newFriend = [];
+        var isers = Isers.findOne({iserId: Meteor.userId()});
+        while (y.length > 0){
+          var p = y.shift();
+          isers.friends.forEach(function(iser){    
+            if (iser.friendId === p){
+              newFriend.push(iser)
+            }
+          })
+        }
+        Meteor.call('updateFriendOrder', isers._id, newFriend);
+
+
     }else{
       $('.fa-arrows').addClass('drag-on');
       $('.fa-arrows').css('color', 'color: rgba(40, 75, 130, 0.9)')
@@ -82,6 +100,8 @@ Template.iserPage.events({
         forcePlaceholderSize: true,
         helper: "clone"
       });
+
+
     }
 
   }
