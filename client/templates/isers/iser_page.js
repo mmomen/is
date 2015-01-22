@@ -110,5 +110,20 @@ Template.iserPage.events({
 
     }
 
+  },
+  'submit #test': function(e){
+    e.preventDefault();
+
+    var uploader = new Slingshot.Upload('myFileUploads');
+    var file = document.getElementById('input').files[0]
+
+    if (file && Meteor.userId()){
+      uploader.send(file, function(error, downloadUrl){
+        // console.log("hi");
+        // console.log(downloadUrl);
+        Meteor.call('uploadFile', downloadUrl);
+      });
+    }
+
   }
 })
