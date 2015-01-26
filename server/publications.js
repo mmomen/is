@@ -22,7 +22,6 @@ Meteor.publish('requests', function(_id) {
   }
 });
 
-
 Meteor.publish('searchResult', function(iserId){
   if (!iserId){
     return this.ready();
