@@ -119,8 +119,6 @@ Template.iserPage.events({
 
     if (file && Meteor.userId()){
       uploader.send(file, function(error, downloadUrl){
-        // console.log("hi");
-        // console.log(downloadUrl);
         Meteor.call('uploadFile', downloadUrl);
       });
     }
